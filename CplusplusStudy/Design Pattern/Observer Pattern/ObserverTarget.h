@@ -1,52 +1,46 @@
 #pragma once
 
 #include <memory>
+#include <string>
 
-class ObserverEventRegisterBase;
-class ObserverBase;
+class EventRegisterBase;
 
 class ObserverTargetA
 {
 private:
-	std::shared_ptr<ObserverEventRegisterBase> m_pObserverEventRegister;
+	std::shared_ptr<EventRegisterBase> m_pEventRegister;
 
 public:
 	ObserverTargetA();
 
 public:
-	static void AddObserverEvent(ObserverTargetA* pThis);
-	static void RemoveObserverEvent(ObserverTargetA* pThis);
-	static void OnObserverEvent_Event1(std::shared_ptr<ObserverBase> pObserver, int param1, float param2, double param3);
-	static void OnObserverEvent_Event2(std::shared_ptr<ObserverBase> pObserver, int param1, int param2);
-	static void OnObserverEvent_Event3(std::shared_ptr<ObserverBase> pObserver, double param1);
+	void PlayEventA(int a, int b, int c);
+	void PlayEventB(std::string a);
 };
 
 class ObserverTargetB
 {
 private:
-	std::shared_ptr<ObserverEventRegisterBase> m_pObserverEventRegister;
+	std::shared_ptr<EventRegisterBase> m_pEventRegister;
 
 public:
 	ObserverTargetB();
 
 public:
-	static void AddObserverEvent(ObserverTargetB* pThis);
-	static void RemoveObserverEvent(ObserverTargetB* pThis);
-	static void OnObserverEvent_Event1(std::shared_ptr<ObserverBase> pObserver, int param1, float param2, double param3);
-	static void OnObserverEvent_Event2(std::shared_ptr<ObserverBase> pObserver, int param1, int param2);
+	void PlayEventA(int a, int b, int c);
+	void PlayEventB(std::string a);
 };
 
 class ObserverTargetC
 {
 private:
-	std::shared_ptr<ObserverEventRegisterBase> m_pObserverEventRegister;
+	std::shared_ptr<EventRegisterBase> m_pEventRegister;
 
 public:
 	ObserverTargetC();
 
 public:
-	static void AddObserverEvent(ObserverTargetC* pThis);
-	static void RemoveObserverEvent(ObserverTargetC* pThis);
-	static void OnObserverEvent_Event1(std::shared_ptr<ObserverBase> pObserver, int param1, float param2, double param3);
+	void PlayEventA(int a, int b, int c);
+	void PlayEventB(std::string a);
 };
 
